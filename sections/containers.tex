@@ -33,7 +33,8 @@
 		\begin{itemize}
 			\item you want to have a \textbf{software copy} of such system without having to carry it with you;
 			\item you want to have all \textbf{libraries} and \textbf{dependencies} installed without tainting your own;
-			\item you would like to \textbf{deploy} the entire installation with just a few commands.
+			\item you would like to \textbf{deploy} the entire installation with just a few commands;
+			\item you would like to \textbf{avoid reinstalling} or \textbf{reflashing} the OS every time something changes.
 		\end{itemize}
 	\end{exampleblock}
 \end{frame}
@@ -41,8 +42,8 @@
 	\begin{columns}
 		\column{.5\textwidth}
 		A possible solution to many of the previous situations could be a set of \textbg{virtual machines}.\\
-		However, virtual machines are \textbg{slow}, hypervisors take up \textbg{system resources} and guest kernels must always be \textbg{tweaked}.
-		\newline\newline
+		However, virtual machines are \textbg{slow}, hypervisors take up \textbg{system resources} and guest kernels must always be \textbg{tweaked}.\\
+		\bigskip
 		In each of the above scenarios something simpler would be enough, especially since \textbg{the OS is not involved}, only applications are.
 		\begin{block}{}
 			\centering
@@ -66,8 +67,8 @@
 		Support for containers was added to the Linux kernel with a set of \textbg{features} starting from kernel 2.6 (2003), mainly:
 		\begin{itemize}
 			\item \textbg{control groups} (\texttt{cgroups}): defining different resource usage policies for groups of processes;
-			\item \textbg{namespaces}: isolating processes and users in different "realms", both hardware (e.g. network stack) and software (e.g. PIDs);
-			\item \textbg{capabilities}: granting some of the superuser's permissions to unprivileged threads.
+			\item \textbg{namespaces}: isolating processes and users in different \emph{realms}, both hardware (\emph{e.g.}, network stack) and software (\emph{e.g.}, PIDs);
+			\item \textbg{capabilities}: granting some of the superuser's permissions to unprivileged threads with very fine-grained control (\emph{e.g.}, network protocols, scheduling policies...).
 		\end{itemize}
 
 		\column{.5\textwidth}
@@ -82,8 +83,8 @@
 \begin{frame}{Containers in the Linux kernel}
 	\begin{figure}
 		\centering
-		\includegraphics[scale=.137]{pidNamespace.png}
+		\includegraphics[scale=.125]{pidNamespace.png}
 		\label{fig:pidnamespace}
-		\caption{Nested PID namespaces.}
+		\caption{Nested PID namespaces: processes in each namespace can only address processes in their own namespace, but the parent process of a namespace can address also all those in its child.}
 	\end{figure}
 \end{frame}

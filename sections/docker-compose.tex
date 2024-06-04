@@ -10,8 +10,8 @@
 \begin{frame}{Composing services}
 	\begin{columns}
 		\column{.5\textwidth}
-		Managing multiple, interdependent \textbg{containerized services} can become quite a tedious task.
-    \newline\newline
+		Managing multiple, interdependent \textbg{containerized services} can become quite a tedious task.\\
+    \bigskip
 		Each container may take multiple options, some have to be started in sequence or built in a particular way...
 		\begin{block}{}
 			\centering
@@ -53,15 +53,26 @@ services:
 
 % --- Compose commands ---
 \begin{frame}{Compose commands}
-	Pretty much the same that Docker has, but invoked with
-  \newline\newline
-	\texttt{docker-compose}
-  \newline\newline
-	instead of \texttt{docker}, and oriented only towards services specified in the local Compose file.
-  \newline\newline
-	See the \href{https://docs.docker.com/compose/reference/}{\color{blue}\underline{Compose CLI reference}} for more.
-  \newline\newline
+	Pretty much the same that Docker has, but invoked with\\
+  \bigskip
+	\texttt{docker compose}\\
+  \bigskip
+	instead of \texttt{docker} (previously \texttt{docker-compose}), and oriented only towards services specified in the local Compose file.\\
+  \bigskip
+	See the \href{https://docs.docker.com/compose/reference/}{\color{blue}\underline{Compose CLI reference}} for more.\\
+  \bigskip
   Installation instructions for Docker and Compose can be found \href{https://docs.docker.com/engine/install/ubuntu/}{\color{blue}\underline{here}} and \href{https://docs.docker.com/compose/install/linux/}{\color{blue}\underline{here}}, respectively, and also in the provided shell script \href{https://github.com/IntelligentSystemsLabUTV/ros2-examples/blob/humble/bin/docker_install.sh}{\color{blue}\underline{\texttt{bin/docker\_install.sh}}}.\\
   On systems with an Nvidia GPU, the \href{https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/overview.html}{\color{blue}\underline{NVIDIA Container Toolkit}} is suggested.\\
-  Installation on Windows and macOS requires \href{https://www.docker.com/products/docker-desktop/}{\color{blue}\underline{Docker Desktop}}.
+  Installation on Windows and macOS requires \href{https://www.docker.com/products/docker-desktop/}{\color{blue}\underline{Docker Desktop}}, but \textbg{lacks many features}.
+\end{frame}
+
+% --- Example ---
+\begin{frame}{Example}{\texttt{ros2-examples}}
+  Remember \href{https://github.com/IntelligentSystemsLabUTV/ros2-examples}{\color{blue}\underline{ros2-examples}}?\\
+  It is a self-contained \textbg{ROS 2 development environment built with Docker}!\\
+  \bigskip
+  It also supports the \textbg{automated build} of \textbg{development containers} in \textbg{VS Code}.\\
+	Such containers are based on our \href{https://github.com/IntelligentSystemsLabUTV/dua-template}{\color{blue}{\underline{\textbf{Distributed Unified Architecture}}}} project, which is part of Roberto Masocco's PhD thesis.\\
+  \bigskip
+	Their inner workings are totally transparent, but if you're curious see \href{https://github.com/IntelligentSystemsLabUTV/ros2-examples/blob/humble/dua_template.md}{\color{blue}\underline{\texttt{dua\_template.md}}}.
 \end{frame}
